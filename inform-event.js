@@ -6,14 +6,14 @@ var parameterList = [];
 var config_complete = 0;
 
 function main(){
-    if(config_complete === 0){
+    if(config_complete == 0){
         inform_boot();
     }else{
         inform_periodic();
     }
 }
 
-setInterval(main, 300000);
+setInterval(main, 60000);
 
 async function inform_periodic(){
     var options = {
