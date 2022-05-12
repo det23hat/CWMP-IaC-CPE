@@ -1,3 +1,4 @@
+const fs = require('fs');
 const http = require('http');
 var config_complete = 0;
 
