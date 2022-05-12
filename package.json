@@ -1,0 +1,22 @@
+{
+  "name": "cwmp-iac-cpe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "inform-event.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/det23hat/CWMP-IaC-CPE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/det23hat/CWMP-IaC-CPE/issues"
+  },
+  "homepage": "https://github.com/det23hat/CWMP-IaC-CPE#readme",
+  "dependencies": {
+    "csv-parser": "^3.0.0"
+  }
+}
