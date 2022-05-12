@@ -6,6 +6,7 @@ var parameterList = [];
 var config_complete = 0;
 
 function main(){
+    console.log(config_complete);
     if(config_complete == 0){
         console.log("send BOOT event");
         inform_boot();
@@ -62,8 +63,8 @@ async function inform_boot(){
         response.on('data', function (chunk) {
             let result = JSON.parse(chunk);
             console.log(`config result:`)
-            console.log(result.config_result);
-            config_complete = result.config_result;
+            console.log(result.config_complete);
+            config_complete = result.config_complete;
         });
       
         response.on('end', function () {
