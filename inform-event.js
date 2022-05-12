@@ -7,8 +7,10 @@ var config_complete = 0;
 
 function main(){
     if(config_complete == 0){
+        console.log("send BOOT event");
         inform_boot();
     }else{
+        console.log("send Periodic event");
         inform_periodic();
     }
 }
@@ -40,7 +42,6 @@ async function inform_periodic(){
           parameter: parameterList
         });
             console.log(body)
-            console.log("new ver 1.2")
             req.write(body);
             req.end();
       }).catch((err) => {
@@ -60,7 +61,8 @@ async function inform_boot(){
         var str = ''
         response.on('data', function (chunk) {
             let result = JSON.parse(chunk);
-            console.log(`config result = ${result.config_result}`)
+            console.log(`config result:`)
+            console.log(result.config_result);
             config_complete = result.config_result;
         });
       
