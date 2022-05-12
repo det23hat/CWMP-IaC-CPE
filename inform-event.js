@@ -2,6 +2,7 @@ const fs = require('fs');
 const http = require('http');
 const csv = require('csv-parser');
 
+var parameterList = [];
 var config_complete = 0;
 
 function main(){
