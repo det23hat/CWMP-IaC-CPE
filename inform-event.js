@@ -6,7 +6,6 @@ var parameterList = [];
 var config_complete = 0;
 
 function main(){
-    console.log(config_complete);
     if(config_complete == 0){
         console.log("send BOOT event");
         inform_boot();
@@ -62,8 +61,8 @@ async function inform_boot(){
         var str = ''
         response.on('data', function (chunk) {
             let result = JSON.parse(chunk);
-            console.log(`config result:`)
-            console.log(result.config_complete);
+            // console.log(`config result:`)
+            // console.log(result.config_complete);
             config_complete = result.config_complete;
         });
       
@@ -75,6 +74,7 @@ async function inform_boot(){
       let connection_info = JSON.stringify({
         host_mac_addr : process.env.MAC,
         ansible_ssh_host : process.env.HOSTNAME,
+        password: process.env.PWD,
     })
         req.write(connection_info);
         req.end();
